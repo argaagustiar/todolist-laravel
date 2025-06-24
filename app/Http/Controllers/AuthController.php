@@ -32,7 +32,7 @@ class AuthController extends Controller
         ]);
 
         return response()->json([
-            'statusCode' => 2000,
+            'statusCode' => 200,
             'message' => 'User registered successfully',
             'data' => [
                 'id' => $user->id,
@@ -69,7 +69,7 @@ class AuthController extends Controller
         $user = auth()->user();
 
         return response()->json([
-            'statusCode' => 2000,
+            'statusCode' => 200,
             'message' => 'Login successful',
             'data' => [
                 'token' => $token,
@@ -87,7 +87,7 @@ class AuthController extends Controller
         JWTAuth::invalidate(JWTAuth::getToken());
 
         return response()->json([
-            'statusCode' => 2000,
+            'statusCode' => 200,
             'message' => 'Successfully logged out'
         ]);
     }

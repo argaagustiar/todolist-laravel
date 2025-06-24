@@ -8,11 +8,6 @@ use Illuminate\Support\Facades\Validator;
 
 class ChecklistItemController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('auth:api');
-    }
-
     public function index($checklistId)
     {
         $checklist = Checklist::where('id', $checklistId)
